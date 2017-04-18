@@ -1,0 +1,643 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* flexible 1rem = 10vw !important */
+@media (max-width: 320px) {
+  html {
+    font-size: 32px;
+  }
+}
+@media (min-width: 375px) {
+  html {
+    font-size: 37.5px;
+  }
+}
+@media (min-width: 360px) {
+  html {
+    font-size: 36px;
+  }
+}
+@media (min-width: 384px) {
+  html {
+    font-size: 38.4px;
+  }
+}
+@media (min-width: 414px) {
+  html {
+    font-size: 41.4px;
+  }
+}
+@media (min-width: 480px) {
+  html {
+    font-size: 48px;
+  }
+}
+@media (min-width: 640px) {
+  html {
+    font-size: 64px;
+  }
+}
+.clearfix::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+html {
+  font-family: "HiraginoSansGB W6", "microsoft yahei";
+}
+body {
+  font-size: 0.375rem;
+}
+.container {
+  background-color: #fff;
+}
+.copyright {
+  color: #dcdcdc;
+  text-align: center;
+  font-size: 0.375rem;
+  padding: 0.390625rem 0;
+}
+.orange {
+  color: #ff6815;
+}
+.green {
+  color: #50b400;
+}
+.none {
+  display: none;
+}
+/** btn **/
+.tab-select-area {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 0.9375rem;
+  background-color: #f6f6f6;
+  border: 1px solid #dcdcdc;
+  border-radius: 0.15625rem;
+  position: relative;
+}
+.tab-select-area::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+.btn {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #666;
+  text-align: center;
+  cursor: pointer;
+}
+.btn-echart {
+  float: left;
+  width: 20%;
+  font-size: 0.4375rem;
+  height: 0.9375rem;
+  line-height: 0.9375rem;
+}
+.btn-echart.active {
+  color: #ff6815;
+  background-color: #fff;
+  border: 1px solid #ff6815;
+  border-radius: 0.15625rem;
+  margin-top: -1px;
+}
+.btn-echart:first-child.active {
+  position: relative;
+  left: -1px;
+}
+.btn-echart:last-child.active {
+  position: relative;
+  right: -1px;
+}
+.btn-changeDaybook,
+.btn-select-completion {
+  position: absolute;
+  right: 0.46875rem;
+  top: 0.3125rem;
+  font-size: 0.34375rem;
+  height: 0.703125rem;
+  line-height: 0.703125rem;
+  padding: 0 0.15625rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 0.15625rem;
+  z-index: 999;
+}
+.btn-select-completion .selected {
+  float: left;
+  margin: 0 0.15625rem;
+}
+.btn-select-completion .split {
+  float: left;
+  height: 0.34375rem;
+  margin-top: 0.1875rem;
+  width: 1px;
+  background-color: #dcdcdc;
+}
+.btn-select-completion .arrow-down {
+  float: left;
+  width: 1.5em;
+  height: 100%;
+  background: url(img/dest/icon-arrow-down.png) no-repeat 50% 50%;
+  background-size: 0.8em auto;
+  -webkit-transition: 0.5s transform;
+  transition: 0.5s transform;
+}
+.btn-select-completion.spread .arrow-down {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.sec {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.3125rem 0.46875rem;
+  border-bottom: 1px solid #dcdcdc;
+}
+.sec-board-main {
+  padding: 0;
+}
+.sec-board-main::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+.sec-board-main .update-time {
+  color: #ff6815;
+  background-color: #ffcfa2;
+  text-align: center;
+  line-height: 1.5;
+}
+.sec-board-main .board-main {
+  height: 3.90625rem;
+  background-color: #ff7728;
+  background: -webkit-linear-gradient(top, #ff9a41, #ff5d15);
+  background: -moz-linear-gradient(top, #ff9a41, #ff5d15);
+  background: -ms-linear-gradient(top, #ff9a41, #ff5d15);
+  background: linear-gradient(top, #ff9a41, #ff5d15);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+.sec-board-main .board-total {
+  background: url(img/dest/line.png) no-repeat 50% 100%;
+  background-size: 90% auto;
+  height: 2.109375rem;
+  overflow: hidden;
+}
+.sec-board-main .board-total strong {
+  display: block;
+  font-size: 0.4375rem;
+  line-height: 2.2;
+}
+.sec-board-main .board-total .total-count {
+  color: #fff;
+  font-size: 0.9375rem;
+  -webkit-text-shadow: 0 1px 2px #f00;
+  text-shadow: 0 1px 2px #f00;
+}
+.sec-board-main .board-total .unit {
+  font-size: 0.3125rem;
+  position: relative;
+  top: -1.4em;
+  left: 1em;
+}
+.sec-board-main .total-commission,
+.sec-board-main .commission-rate {
+  font-size: 0.4375rem;
+  float: left;
+  width: 50%;
+  height: 1.796875rem;
+  line-height: 1.6;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 0.234375rem;
+  overflow: hidden;
+}
+.sec-board-main .total-commission {
+  background: url(img/dest/split.png) no-repeat 100% 50%;
+  background-size: auto 80%;
+}
+.board-title {
+  font-size: 0.4375rem;
+  color: #333;
+  padding-left: 1.4em;
+  margin-bottom: 0.234375rem;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 1em auto;
+}
+.sec-board-month {
+  color: #666;
+  padding-bottom: 0;
+}
+.sec-board-month .board-title {
+  background-image: url(img/dest/icon-month.png);
+}
+.sec-board-month .board-month {
+  border-bottom: 1px dashed gray;
+  line-height: 1.8;
+  padding-bottom: 0.234375rem;
+}
+.sec-board-month .month-gmv,
+.sec-board-month .month-commission,
+.sec-board-month .month-commission-rate {
+  font-size: 0.375rem;
+  color: #666;
+  line-height: 1.5;
+}
+.sec-board-month .month-gmv::after,
+.sec-board-month .month-commission::after,
+.sec-board-month .month-commission-rate::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+.sec-board-month .month-gmv .left,
+.sec-board-month .month-commission .left,
+.sec-board-month .month-commission-rate .left {
+  float: left;
+  text-align: left;
+}
+.sec-board-month .month-gmv .right,
+.sec-board-month .month-commission .right,
+.sec-board-month .month-commission-rate .right {
+  float: right;
+  text-align: right;
+}
+.sec-board-month .month-efficiency {
+  padding: 0.234375rem 0;
+}
+.sec-board-month .efficiency {
+  margin-top: 0.46875rem;
+  vertical-align: middle;
+}
+.sec-board-month .efficiency::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+.sec-board-month .efficiency .label {
+  float: left;
+  width: 20%;
+  text-align: left;
+  margin-top: -0.125rem;
+}
+.sec-board-month .efficiency .line {
+  float: left;
+  width: 75%;
+  height: 0.125rem;
+  background-color: #f6f6f6;
+  border-radius: 0.0625rem;
+  position: relative;
+}
+.sec-board-month .efficiency .progress {
+  display: block;
+  height: 100%;
+  background-color: #e7e7e7;
+  position: relative;
+  width: 0;
+  -webkit-transition: 1s width;
+  transition: 1s width;
+}
+.sec-board-month .efficiency .progress:before {
+  display: block;
+  content: "";
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 0.3125rem;
+  height: 0.3125rem;
+  background-color: #fff;
+  border: 0.078125rem solid #ff6815;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: -0.09375rem;
+  box-shadow: 0.078125rem 0 0.078125rem #fff, -0.078125rem 0 0.078125rem #fff;
+}
+.sec-board-month .efficiency .progress:after {
+  display: block;
+  position: absolute;
+  content: attr(value);
+  right: -0.25rem;
+  top: -0.4375rem;
+  font-size: 0.3125rem;
+  color: #ff6815;
+}
+.sec-board-department .board-title {
+  background-image: url(img/dest/icon-data.png);
+}
+.sec-board-department .tab-select-area {
+  margin-top: 0.3125rem;
+}
+.sec-board-daybook {
+  position: relative;
+}
+.sec-board-daybook .board-title {
+  background-image: url(img/dest/icon-liushui.png);
+}
+.execel-daybook {
+  padding: 0.15625rem 0;
+}
+.execel-table {
+  width: 100%;
+  text-align: center;
+  font-size: 0.3125rem;
+}
+.execel-table th {
+  background-color: #ff6815;
+  color: #fff;
+  border: 1px solid #fff;
+  line-height: 2.5;
+  border-radius: 0.078125rem 0.078125rem 0 0;
+}
+.execel-table td:not(:nth-child(1)) {
+  line-height: 2;
+  border: 1px solid #fff;
+  color: #333;
+  padding-right: 0.15625rem;
+  text-align: right;
+}
+.execel-table tr:nth-child(odd) td {
+  background-color: #f5f5f5;
+}
+.execel-info {
+  font-size: 0.375rem;
+  line-height: 1.6;
+  padding: 0.15625rem 0;
+  color: #666;
+}
+.execel-info li::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+.execel-info .date {
+  color: #333;
+  font-weight: 700;
+}
+.execel-info span {
+  float: left;
+}
+.execel-info span:nth-child(1) {
+  width: 20%;
+}
+.execel-info span:nth-child(2) {
+  text-align: right;
+  width: 40%;
+}
+.execel-info span:nth-child(3) {
+  text-align: right;
+  width: 20%;
+}
+.execel-info span:nth-child(4) {
+  width: 20%;
+  text-align: right;
+}
+.execel-info .word3 {
+  float: left;
+  width: 3em;
+  white-space: nowrap;
+}
+.execel-info .small {
+  font-size: 0.1875rem;
+}
+/*************  月度完成率  ****************/
+.sec-board-completion {
+  position: relative;
+}
+.sec-board-completion .board-title {
+  background-image: url(img/dest/icon-complete.png);
+}
+.competion-tab {
+  position: absolute;
+  width: 100%;
+  background-color: #f6f6f6;
+  top: 1.015625rem;
+  left: 0;
+  z-index: 999;
+  font-size: 0.34375rem;
+  line-height: 2;
+  text-align: center;
+  display: none;
+}
+.competion-tab .tab-item {
+  float: left;
+  width: 25%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0.15625rem 0;
+}
+.competion-tab .tab-item span {
+  display: block;
+  border: 1px solid #dcdcdc;
+  border-radius: 0.078125rem;
+  color: #666;
+  margin: 0 10%;
+  cursor: pointer;
+}
+.competion-tab .tab-item.active span {
+  color: #ff6815;
+  border-color: #ff6815;
+}
+.echart {
+  width: 100%;
+  height: 4.6875rem;
+}
+.echart-column {
+  height: 7.03125rem;
+}
+/**
+ *
+ * 下拉样式 Pull down styles
+ *
+ */
+#wrapper {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: -30px;
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+  -webkit-transform: translateY(-30px);
+}
+#pullDown,
+#pullUp {
+  height: 20px;
+  line-height: 20px;
+  padding: 5px 0;
+  font-weight: bold;
+  font-size: 14px;
+  color: #ccc;
+  text-align: center;
+}
+#pullDown .pullDownIcon,
+#pullUp .pullUpIcon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(img/dest/pull-icon@2x.png) 0 0 no-repeat;
+  -webkit-background-size: 20px 40px;
+  background-size: 20px 40px;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 250ms;
+  vertical-align: middle;
+}
+#pullDown .pullDownIcon {
+  -webkit-transform: rotate(0deg) translateZ(0);
+}
+#pullUp .pullUpIcon {
+  -webkit-transform: rotate(-180deg) translateZ(0);
+}
+#pullDown.flip .pullDownIcon {
+  -webkit-transform: rotate(-180deg) translateZ(0);
+}
+#pullUp.flip .pullUpIcon {
+  -webkit-transform: rotate(0deg) translateZ(0);
+}
+#pullDown.loading .pullDownIcon,
+#pullUp.loading .pullUpIcon {
+  background-position: 0 100%;
+  -webkit-transform: rotate(0deg) translateZ(0);
+  -webkit-transition-duration: 0ms;
+  -webkit-animation-name: loading;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes loading {
+  from {
+    -webkit-transform: rotate(0deg) translateZ(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateZ(0);
+  }
+}

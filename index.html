@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html trace="boss-secretary">
+<head>
+  <meta charset="UTF-8">
+  <title>my echarts</title>
+  <meta name="description" content="echarts demo" />
+  <meta name="keywords" content="echarts" />
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+
+  <link rel="stylesheet" href="index.css?ver=25555555" />
+  <!-- <link rel="stylesheet/less" href="index.less"/>
+  <script src="http://cdn.bootcss.com/less.js/1.7.0/less.min.js"></script> -->
+</head>
+<body>
+  <div id="wrapper">
+    <div id="scroller">
+      <div id="pullDown" class="">
+        <span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
+      </div>
+
+      <div class="container">
+        <section class="sec sec-board-main">
+          <p class="update-time">*数据更新时间<span class="update-time-str"></span></p>
+          <div class="board-main">
+            <h1 class="board-total">
+              <strong>今天全国总GMV</strong>
+              <i class="total-count">&nbsp;</i><sup class="unit">(万元)</sup>
+            </h1>
+            <div class="total-commission">
+              总佣金<br /><i class="commission-count">&nbsp;</i>(万元)
+            </div>
+            <div class="commission-rate">
+              佣金率<br /><i class="rate">&nbsp;</i>
+            </div>
+          </div>
+        </section>
+
+        <section class="sec sec-board-month">
+          <h2 class="board-title">本月进度看板</h2>
+          <div class="board-month">
+            <p class="month-gmv">
+              <span class="left">全国总GMV:</span>
+              <span class="right"><i class="month-gmv-num">&nbsp;</i>(万元)</span>
+            </p>
+            <p class="month-commission">
+              <span class="left">全国总佣金：</span>   
+              <span class="right"><i class="month-commission-num">&nbsp;</i>(万元)</span>
+            </p>
+            <p class="month-commission-rate">
+              <span class="left">全国佣金率:</span>
+              <span class="right"><i class="month-commission-rate-num">&nbsp;</i></span>
+            </p>
+          </div>
+          <div class="month-efficiency">
+            <div class="efficiency effic-time">
+              <label class="label" for="time">时间进度</label>
+              <div class="line time-line">
+                <span class="progress time-line-progress" value=""></span>
+              </div>
+            </div>
+            <div class="efficiency effic-complete">
+              <label class="label" for="complete">完成进度</label>
+              <div class="line complete-line">
+                <span class="progress complete-line-progress" value=""></span>
+              </div>
+            </div>
+          </div> 
+        </section>
+        
+        <!-- 数据看板 -->
+        <section class="sec sec-board-department">
+          <h2 class="board-title">项目数据看板</h2>
+          <div class="echart echart-column" id="echart-column"></div>
+          <div class="tab-select-area">
+            <span class="btn btn-echart active" data-chart="column" data-tab="today">今日</span>
+            <span class="btn btn-echart" data-chart="column" data-tab="yestoday">昨日</span>
+            <span class="btn btn-echart" data-chart="column" data-tab="month">本月</span>
+            <span class="btn btn-echart" data-chart="column" data-tab="lastmonth">上月</span>
+            <span class="btn btn-echart" data-chart="column" data-tab="quarter">本季度</span>
+          </div>
+        </section>
+        
+        <!-- 项目流水 -->
+        <section class="sec sec-board-daybook">
+          <h2 class="board-title">项目流水占比</h2>
+          <span class="btn btn-changeDaybook" id="btn-changeDaybook" data-status="chart" data-text-chart="显示图表" data-text-execel="显示明细">显示明细</span>
+          <div class="echart echart-pie" id="echart-pie" style="min-height: 7rem;"></div>
+
+          <div class="execel-daybook none" id="execel-daybook"></div>
+
+          <div class="tab-select-area">
+            <span class="btn btn-echart active" data-chart="pie" data-tab="today">今日</span>
+            <span class="btn btn-echart" data-chart="pie" data-tab="yestoday">昨日</span>
+            <span class="btn btn-echart" data-chart="pie" data-tab="month">本月</span>
+            <span class="btn btn-echart" data-chart="pie" data-tab="lastmonth">上月</span>
+            <span class="btn btn-echart" data-chart="pie" data-tab="quarter">本季度</span>
+          </div>
+        </section>
+        
+        <!-- 月度完成率 -->
+        <div class="sec sec-board-completion">
+          <h2 class="board-title">月度完成率明细</h2>
+          <div class="completion-tab-area">
+            <span class="btn btn-select-completion" data-status="total">
+              <i class="selected">项目总</i>
+              <i class="split"></i>
+              <i class="arrow-down"></i>
+            </span>
+            <div class="competion-tab">
+              <ul>
+                <li class="tab-item active" data-chart="line" data-tab="total"><span>项目总</span></li>
+                <li class="tab-item" data-chart="line" data-tab="dujia"><span>出境游</span></li>
+                <li class="tab-item" data-chart="line" data-tab="guoneiyou"><span>国内游</span></li>
+                <li class="tab-item" data-chart="line" data-tab="youlun"><span>邮轮</span></li>
+                <li class="tab-item" data-chart="line" data-tab="gentuanyou"><span>跟团游</span></li>
+                <li class="tab-item" data-chart="line" data-tab="ziyouxing"><span>自由行</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="echarts-area">
+            <div class="echart echart-line" id="echart-line" style="min-height: 7rem;"></div>
+          </div>
+        </div>
+
+        <p class="copyright"><a href="https://github.com/xiankui/my-echarts-demo">fork on github</a></p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="./zepto.js"></script>
+
+  <script src="./echarts.common.min.js"></script>
+  <script src="./index.js"></script>
+  <script src="./iscroll-probe.js"></script>
+  <script>
+    var myScroll;
+    var $pullDown = $("#pullDown"),
+        $pullDownLabel = $pullDown.find(".pullDownLabel");
+    // 修复页面click bug
+    function iScrollClick(){
+      if (/iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent)) return false;
+      if (/Chrome/i.test(navigator.userAgent)) return (/Android/i.test(navigator.userAgent));
+      if (/Silk/i.test(navigator.userAgent)) return false;
+      if (/Android/i.test(navigator.userAgent)) {
+         var s=navigator.userAgent.substr(navigator.userAgent.indexOf('Android')+8,3);
+         return parseFloat(s[0]+s[3]) < 44 ? false : true
+        }
+    }
+    myScroll = new IScroll('#wrapper', {
+        probeType:1,
+        click: true,
+        scrollbars: false,
+        mouseWheel: true, 
+        deceleration:0.0002
+    });
+
+    myScroll.on('scroll', function () {
+      if (myScroll.y > 30) {
+        $pullDown.addClass("flip");
+        $pullDownLabel.text("立即释放刷新");
+      } else {
+        $pullDown.removeClass("flip");
+        $pullDownLabel.text("下拉刷新");
+      }
+    });
+
+    myScroll.on("scrollEnd", function () {
+      if ($pullDown.hasClass("flip")) {
+        $pullDown.removeClass("flip").addClass("loading");
+        $pullDownLabel.text("");
+
+        setTimeout(function () {
+          $pullDown.removeClass("loading");
+          // location.reload(true);
+          location.href = location.href + '?rnd=' + new Date().getTime();
+        }, 500);
+      }
+    });
+
+    // document.addEventListener('touchmove', function (e) {
+    //     e.preventDefault();
+    // }, false);
+  </script>
+
+</body>
+</html>
